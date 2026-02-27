@@ -1,1 +1,0 @@
-# mandmf0928.github.io
