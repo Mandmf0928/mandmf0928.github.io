@@ -1,16 +1,15 @@
-*{
+/* --- 기본 설정 및 레이아웃 (700.jpg / 98387dab...) --- */
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background-color: #f5f5f7;
     color: #111827;
     line-height: 1.6;
-
 }
 
 .page {
@@ -21,16 +20,36 @@ body {
     padding: 32px 16px;
 }
 
-.profile-card,
-.section-card {
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.container {
+    width: 100%;
+    max-width: 760px;
+}
+
+.profile-card, .section-card {
     background-color: #ffffff;
     border-radius: 16px;
     padding: 24px 24px 20px;
     margin-bottom: 16px;
     box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
-    border:1px solid #e5e7eb;
+    border: 1px solid #e5e7eb;
 }
 
+/* --- 프로필 상세 (704.jpg / 5ea05315...) --- */
 .profile-card {
     display: grid;
     grid-template-columns: 110px 1fr;
@@ -48,18 +67,66 @@ body {
     justify-content: center;
     color: #f9fafb;
     font-size: 32px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
 }
 
+.profile-right h2 {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.profile-role {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.profile-summary {
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+/* --- 기본 정보 그리드 (704.jpg) --- */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px 16px;
+    grid-column: span 2; /* 700.jpg 기준 프로필 하단 배치용 */
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.info-label {
+    color: #9ca3af;
+    margin-bottom: 2px;
+}
+
+.info-value {
+    font-weight: 500;
+}
+
+/* --- 섹션 카드 및 태그 (5ea05315...) --- */
+.section-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.section-card p {
+    font-size: 14px;
+    color: #374151;
 }
 
 .tag-list {
-    list-style-type: none;
+    list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
+    margin-top: 6px;
 }
 
 .tag {
@@ -68,11 +135,26 @@ body {
     border-radius: 999px;
     background-color: #eef2ff;
     color: #4338ca;
+    border: 1px solid #e0e7ff;
 }
 
 .footer {
     text-align: center;
     margin-top: 12px;
+    font-size: 12px;
     color: #9ca3af;
 }
 
+/* --- 반응형 (5ea05315...) --- */
+@media (max-width: 640px) {
+    .profile-card {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+    .profile-card {
+        padding: 20px 16px 18px;
+    }
+    .section-card {
+        padding: 20px 16px 18px;
+    }
+}
